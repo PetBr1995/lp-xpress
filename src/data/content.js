@@ -1,0 +1,61 @@
+export const services = [
+  {
+    title: 'Comunicação Visual',
+    text: 'Equipamentos de alta tecnologia para poder imprimir com mais precisão e durabilidade em adesivos, lonas e diversos formatos de mídia.',
+    icon: '◉',
+  },
+  {
+    title: 'Confecção',
+    text: 'Oferecemos serviços de malharia para camisas, também uniformes, com produção sob demanda e corte personalizado conforme o objetivo da sua marca.',
+    icon: '◌',
+  },
+  {
+    title: 'Gráfica Xpress',
+    text: 'Serviços de gráfica rápida para facilitar seu dia a dia com variedade de peças para campanhas e materiais impressos.',
+    icon: '✦',
+  },
+  {
+    title: 'Brindes Personalizados',
+    text: 'Vendemos e criamos personalizados para sua empresa, materiais estratégicos, com foco em brindes e itens que reforçam sua marca.',
+    icon: '▣',
+  },
+]
+
+export const events = ['Totens', 'Fachada', 'Stands', 'Murais', 'Espaço']
+
+export const projects = [
+  'Copos',
+  'Canecas',
+  'Canetas Personalizadas',
+  'Camisa',
+  'Recortes Acrílico',
+  'Mochila Saco',
+  'Crachá e Cordão',
+  'Placa Metálica',
+]
+
+export const blogs = [
+  {
+    date: '13 de Março de 2023',
+    title: 'Materiais de papelaria personalizados para empresas',
+    text: 'Seu negócio tem materiais de papelaria personalizados? É hora de pensar nesse ponto. Descubra qual a importância e em quais itens investir.',
+  },
+  {
+    date: '25 de Outubro de 2022',
+    title: 'Brindes de fim de ano: 7 ideias para adotar na sua empresa',
+    text: 'Quem não gosta de receber brindes de fim de ano, não é? A Gráfica Xpress traz ideias incríveis de mimos para os seus colaboradores.',
+  },
+  {
+    date: '13 de Março de 2023',
+    title: '10 ideias de materiais gráficos personalizados para a sua empresa',
+    text: 'Use materiais certos na elaboração de campanhas e eventos. Veja algumas inspirações para elevar sua presença de marca.',
+  },
+]
+
+export const brands = [
+  { name: 'Digital', src: '/logo-digital-branca.png' },
+  { name: 'Onda Digital', src: '/logo-onda-digital.png' },
+  { name: 'Tore', src: '/logo-tore.png' },
+  { name: 'Amazon IA', src: '/logo-amazon-ia.png' },
+  { name: 'DSX', src: '/logo-dsx.png' },
+]
