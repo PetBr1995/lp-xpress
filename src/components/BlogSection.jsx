@@ -17,11 +17,21 @@ function formatPostDate(value) {
   })
 }
 
+function normalizeFallbackPosts(blogs = []) {
+  return blogs.map((post, index) => ({
+    ...post,
+    image: post.image || '',
+    url: post.url || '#',
+    _id: `fallback-${index}-${post.title || 'post'}`,
+  }))
+}
+
 function BlogSection({ blogs = [] }) {
-  const [posts, setPosts] = useState(blogs.slice(0, 3))
+  const [posts, setPosts] = useState(normalizeFallbackPosts(blogs).slice(0, 3))
 
   useEffect(() => {
     const controller = new AbortController()
+    const fallbackPosts = normalizeFallbackPosts(blogs).slice(0, 3)
 
     const loadPosts = async () => {
       try {
@@ -31,7 +41,8 @@ function BlogSection({ blogs = [] }) {
         const payload = await response.json()
         if (!Array.isArray(payload)) return
 
-        const parsedPosts = payload.slice(0, 3).map((post) => ({
+        const parsedPosts = payload.slice(0, 3).map((post, index) => ({
+          _id: `api-${post?.id || index}`,
           title: toPlainText(post?.title?.rendered || ''),
           text: toPlainText(post?.excerpt?.rendered || ''),
           date: formatPostDate(post?.date),
@@ -41,13 +52,8 @@ function BlogSection({ blogs = [] }) {
 
         if (parsedPosts.length) {
           const merged = [...parsedPosts]
-          const fallback = blogs.map((post) => ({
-            ...post,
-            image: post.image || '',
-            url: post.url || '#',
-          }))
 
-          for (const item of fallback) {
+          for (const item of fallbackPosts) {
             if (merged.length >= 3) break
             merged.push(item)
           }
@@ -55,7 +61,7 @@ function BlogSection({ blogs = [] }) {
           setPosts(merged.slice(0, 3))
         }
       } catch {
-        // keep fallback posts when API is unavailable
+        setPosts(fallbackPosts)
       }
     }
 
@@ -70,7 +76,7 @@ function BlogSection({ blogs = [] }) {
       <div className="mt-[26px] flex flex-wrap justify-center gap-4 max-[560px]:gap-6">
         {posts.map((post, index) => (
           <article
-            key={post.title}
+            key={post._id || `${post.url}-${index}`}
             className="flex min-h-[380px] w-full max-w-[280px] flex-col text-left"
             data-reveal="up"
             data-reveal-delay={index * 90}
@@ -86,8 +92,8 @@ function BlogSection({ blogs = [] }) {
               <div className="mb-2.5 h-[150px] rounded-lg bg-[linear-gradient(130deg,#6091b2,#d6d8e0)]" />
             )}
             <small className="text-[12px] text-[#6a6f8f]">{post.date}</small>
-            <h4 className="my-1.5 text-[30px] leading-[1.1]">{post.title}</h4>
-            <p className="overflow-hidden text-ellipsis leading-[1.45] text-[#50546e] [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:4]">
+            <h4 className="my-1.5 text-[22px] leading-[1.2]">{post.title}</h4>
+            <p className="overflow-hidden pb-3 text-ellipsis text-[14px] leading-[1.5] text-[#50546e] [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:4]">
               {post.text}
             </p>
             <a

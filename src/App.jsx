@@ -160,6 +160,7 @@ function App() {
     revealElements.forEach((element) => {
       const delay = Number(element.getAttribute('data-reveal-delay') || 0)
       element.style.transitionDelay = `${delay}ms`
+      element.classList.add('reveal-init')
       observer.observe(element)
     })
 
