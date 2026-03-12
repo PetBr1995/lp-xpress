@@ -3,6 +3,7 @@ import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ServicesPage from './pages/ServicesPage'
 import Header from './components/Header'
+import BotaoWP from './components/BotaoWP'
 
 const EXIT_DURATION_MS = 240
 
@@ -107,7 +108,12 @@ function App() {
       }
 
       const anchor = event.target.closest('a')
-      if (!anchor || anchor.target === '_blank' || anchor.hasAttribute('download')) {
+      if (
+        !anchor ||
+        anchor.target === '_blank' ||
+        anchor.hasAttribute('download') ||
+        anchor.hasAttribute('data-native-nav')
+      ) {
         return
       }
 
@@ -180,6 +186,7 @@ function App() {
       <main className={`route-transition ${transitionState}`}>
         {page}
       </main>
+      <BotaoWP />
     </div>
   )
 }

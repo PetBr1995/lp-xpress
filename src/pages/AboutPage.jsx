@@ -4,6 +4,7 @@ import MapSection from '../components/MapSection'
 import QuoteFormSection from '../components/QuoteFormSection'
 import BrandCarousel from '../components/BrandCarousel'
 import { brands } from '../data/content'
+import Seo from '../components/Seo'
 
 const values = [
   {
@@ -31,6 +32,18 @@ function AboutPage() {
 
   return (
     <>
+      <Seo
+        title="Sobre a Gráfica Xpress | Nossa História e Valores"
+        description="Conheça a trajetória da Gráfica Xpress desde 2010, nossa missão, visão, valores e a estrutura completa para atender sua marca."
+        pathname="/sobre"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'AboutPage',
+          name: 'Sobre a Gráfica Xpress',
+          url: 'https://graficaxpress.com.br/sobre',
+          description: 'História, missão, visão e valores da Gráfica Xpress.',
+        }}
+      />
       <section className="bg-[#8a8a8a] py-[66px] text-white max-[920px]:py-12" data-reveal="up">
         <div className="mx-auto w-full max-w-[960px] px-6">
           <h1 className="m-0 text-[56px] leading-[1.08] max-[920px]:text-[34px]">

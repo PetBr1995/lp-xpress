@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import Footer from '../components/Footer'
 import MapSection from '../components/MapSection'
 import QuoteFormSection from '../components/QuoteFormSection'
+import Seo from '../components/Seo'
 
 const serviceHighlights = [
   {
@@ -79,6 +80,18 @@ function ServicesPage() {
 
   return (
     <>
+      <Seo
+        title="Serviços | Gráfica Xpress"
+        description="Conheça os serviços da Gráfica Xpress: comunicação visual, confecção, gráfica rápida, brindes personalizados e decoração de eventos."
+        pathname="/servicos"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'Serviços | Gráfica Xpress',
+          url: 'https://graficaxpress.com.br/servicos',
+          description: 'Página de serviços da Gráfica Xpress.',
+        }}
+      />
       <section className="grid h-[305px] place-items-center bg-[#8e8e8e] tracking-[0.03em] text-[#f3f3f3]" data-reveal="up">
         <span>BANNER</span>
       </section>
