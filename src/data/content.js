@@ -23,16 +23,58 @@ export const services = [
 
 export const events = ['Totens', 'Fachada', 'Stands', 'Murais', 'Espaço']
 
-export const projects = [
-  'Copos',
-  'Canecas',
-  'Canetas Personalizadas',
-  'Camisa',
-  'Recortes Acrílico',
-  'Mochila Saco',
-  'Crachá e Cordão',
-  'Placa Metálica',
-]
+export const projects = {
+  graficaRapida: [
+    'Cartões de Visita',
+    'Panfletos',
+    'Folders',
+    'Cardápios',
+    'Adesivos',
+    'Blocos',
+    'Receituários',
+    'Convites',
+  ],
+  comunicacaoVisual: [
+    'Fachadas',
+    'Banners',
+    'Lonas',
+    'Totens',
+    'Backdrops',
+    'Placas',
+    'Letreiros',
+    'Sinalização Interna',
+  ],
+  malharia: [
+    'Camisas',
+    'Uniformes',
+    'Abadás',
+    'Bonés',
+    'Bolsas de Tecido',
+    'Aventais',
+    'Jalecos',
+    'Camisetas Promocionais',
+  ],
+  festas: [
+    'Topo de Bolo',
+    'Painéis',
+    'Totens de Mesa',
+    'Lembrancinhas',
+    'Caixas Personalizadas',
+    'Convites Temáticos',
+    'Tags Decorativas',
+    'Placas de Festa',
+  ],
+  personalizados: [
+    'Copos',
+    'Canecas',
+    'Canetas Personalizadas',
+    'Camisa',
+    'Recortes Acrílico',
+    'Mochila Saco',
+    'Crachá e Cordão',
+    'Placa Metálica',
+  ],
+}
 
 export const blogs = [
   {

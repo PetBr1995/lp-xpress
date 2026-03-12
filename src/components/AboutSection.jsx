@@ -1,23 +1,30 @@
 function AboutSection() {
   return (
-    <section id="sobre" className="about container">
-      <div className="about-text">
-        <h2>
+    <section
+      id="sobre"
+      className="mx-auto grid w-full max-w-[960px] grid-cols-[1.1fr_1fr] gap-7 px-6 pt-[52px] max-[920px]:grid-cols-1"
+    >
+      <div>
+        <h2 className="m-0 text-[45px] leading-[1.05] max-[920px]:text-[34px]">
           Desde 2010, imprimindo
           <br />
           projetos e ideias com
           <br />
           excelência.
         </h2>
-        <p>
+        <p className="mt-4 leading-[1.45] text-[#50546e]">
           A <strong>Gráfica Xpress</strong> nasceu com o propósito de oferecer soluções em comunicação visual e
           gráfica rápida para os mais diversos segmentos. Contamos com tecnologia avançada para impressão,
           corte de materiais rígidos, bordados e muito mais, sempre focados em entregar produtos e serviços
           de alta qualidade.
         </p>
       </div>
-      <div className="about-image">
-        <img src="/img-home-xpress.png" alt="Equipe Xpress em produção gráfica" />
+      <div className="min-h-[270px] overflow-hidden rounded-[2px]">
+        <img
+          src="/img-home-xpress.png"
+          alt="Equipe Xpress em produção gráfica"
+          className="block h-full min-h-[270px] w-full object-cover object-center"
+        />
       </div>
     </section>
   )
