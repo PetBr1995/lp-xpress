@@ -135,6 +135,31 @@ function App() {
     return () => window.clearTimeout(timer)
   }, [route.hash, route.pathname, scrollToHash])
 
+  useEffect(() => {
+    const revealElements = Array.from(document.querySelectorAll('[data-reveal]'))
+    if (!revealElements.length) return undefined
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle('is-visible', entry.isIntersecting)
+        })
+      },
+      {
+        threshold: 0.16,
+        rootMargin: '0px 0px -8% 0px',
+      },
+    )
+
+    revealElements.forEach((element) => {
+      const delay = Number(element.getAttribute('data-reveal-delay') || 0)
+      element.style.transitionDelay = `${delay}ms`
+      observer.observe(element)
+    })
+
+    return () => observer.disconnect()
+  }, [route.pathname])
+
   let page = <HomePage />
   let currentPage = 'home'
   let quoteHref = '/#contato'
@@ -150,7 +175,7 @@ function App() {
   }
 
   return (
-    <div className="pt-[92px] max-[920px]:pt-[150px]">
+    <div className="pt-[92px]">
       <Header currentPage={currentPage} quoteHref={quoteHref} />
       <main className={`route-transition ${transitionState}`}>
         {page}

@@ -23,7 +23,7 @@ function ProjectsSection({ projects }) {
   const activeProjects = projectsByCategory?.[activeCategory] ?? []
 
   return (
-    <section className="relative mt-14 bg-[linear-gradient(#e5e5e7,#e0e0e3)] py-[60px]">
+    <section className="relative mt-14 bg-[linear-gradient(#e5e5e7,#e0e0e3)] py-[60px]" data-reveal="up">
       <div className="absolute -top-[17px] left-1/2 h-[34px] w-[34px] -translate-x-1/2 rotate-45 bg-[#e5e5e7]" />
 
       <section className="mx-auto w-full max-w-[960px] px-6 text-center">
@@ -51,8 +51,8 @@ function ProjectsSection({ projects }) {
           })}
         </div>
 
-        <div className="grid grid-cols-4 gap-1 max-[920px]:grid-cols-2 max-[560px]:grid-cols-1">
-          {activeProjects.map((item) => {
+        <div className="grid grid-cols-4 gap-1 max-[920px]:grid-cols-2 max-[920px]:gap-3 max-[560px]:grid-cols-1">
+          {activeProjects.map((item, index) => {
             const isActive = activeCardsByCategory[activeCategory] === item
 
             return (
@@ -64,6 +64,8 @@ function ProjectsSection({ projects }) {
                   setActiveCardsByCategory((prev) => ({ ...prev, [activeCategory]: item }))
                 }}
                 className={`group relative h-[136px] overflow-hidden rounded-lg px-2.5 text-center text-[18px] uppercase text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_22px_rgba(25,29,52,0.35)] ${isActive ? 'shadow-[0_10px_22px_rgba(134,45,144,0.45)]' : ''}`}
+                data-reveal="zoom"
+                data-reveal-delay={index * 70}
               >
                 <span className="absolute inset-0 bg-[linear-gradient(120deg,#353845,#6d6f77)]" />
                 <span

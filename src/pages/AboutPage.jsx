@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Footer from '../components/Footer'
 import MapSection from '../components/MapSection'
 import QuoteFormSection from '../components/QuoteFormSection'
@@ -19,6 +20,9 @@ const values = [
 ]
 
 function AboutPage() {
+  const [insideSlideIndex, setInsideSlideIndex] = useState(0)
+
+  const insideSlides = ['PRODUÇÃO', 'ATENDIMENTO', 'ACABAMENTO', 'IMPRESSÃO']
   const aboutMapEmbedUrl =
     'https://www.google.com/maps?q=-3.093978,-59.9965769&z=18&output=embed'
   const aboutMapLinkUrl =
@@ -26,7 +30,7 @@ function AboutPage() {
 
   return (
     <>
-      <section className="bg-[#8a8a8a] py-[66px] text-white max-[920px]:py-12">
+      <section className="bg-[#8a8a8a] py-[66px] text-white max-[920px]:py-12" data-reveal="up">
         <div className="mx-auto w-full max-w-[960px] px-6">
           <h1 className="m-0 text-[56px] leading-[1.08] max-[920px]:text-[34px]">
             Desde 2010, dando forma
@@ -45,17 +49,17 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[960px] px-6 pb-11 pt-11 text-center">
+      <section className="mx-auto w-full max-w-[960px] px-6 pb-11 pt-11 text-center" data-reveal="up">
         <h2 className="m-0 text-[48px] leading-[1.1] text-[#222a67] max-[920px]:text-[34px]">Uma trajetória construída em cada projeto entregue</h2>
         <div className="mx-auto mb-6 mt-4 h-0.5 w-[70px] bg-[#b046ac]" />
-        <div className="grid grid-cols-4 gap-2 max-[920px]:grid-cols-2">
-          {[1, 2, 3, 4].map((item) => (
-            <div key={item} className="grid h-[140px] place-items-center rounded-md bg-[#8c8c8c] text-[14px] text-white">FOTO</div>
+        <div className="grid grid-cols-4 gap-2 max-[920px]:grid-cols-2 max-[920px]:gap-3">
+          {[1, 2, 3, 4].map((item, index) => (
+            <div key={item} className="grid h-[140px] place-items-center rounded-md bg-[#8c8c8c] text-[14px] text-white" data-reveal="zoom" data-reveal-delay={index * 70}>FOTO</div>
           ))}
         </div>
       </section>
 
-      <section className="flex min-h-[320px] items-center bg-[linear-gradient(120deg,rgba(8,16,41,0.7),rgba(20,29,62,0.45)),linear-gradient(140deg,#4b4f58,#6a717d_45%,#bd9b7b_48%,#6e4f39_75%,#2e3440)] py-12 text-center text-white">
+      <section className="flex min-h-[320px] items-center bg-[linear-gradient(120deg,rgba(8,16,41,0.7),rgba(20,29,62,0.45)),linear-gradient(140deg,#4b4f58,#6a717d_45%,#bd9b7b_48%,#6e4f39_75%,#2e3440)] py-12 text-center text-white" data-reveal="up">
         <div className="mx-auto w-full max-w-[960px] px-6">
           <h2 className="m-0 text-[48px] leading-[1.1] max-[920px]:text-[34px]">De portas abertas para receber você e sua marca</h2>
           <div className="mx-auto mb-6 mt-4 h-0.5 w-[70px] bg-[#b046ac]" />
@@ -63,12 +67,12 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[960px] px-6 pb-10 pt-[46px] text-center">
+      <section className="mx-auto w-full max-w-[960px] px-6 pb-10 pt-[46px] text-center" data-reveal="up">
         <h2 className="m-0 text-[48px] leading-[1.1] text-[#222a67] max-[920px]:text-[34px]">O que nos move todos os dias</h2>
         <div className="mx-auto mb-6 mt-4 h-0.5 w-[70px] bg-[#b046ac]" />
-        <div className="grid grid-cols-3 gap-2 max-[920px]:grid-cols-1">
-          {values.map((item) => (
-            <article key={item.title} className="rounded-lg bg-[#8c3294] px-3 py-4 text-left text-white">
+        <div className="grid grid-cols-3 gap-2 max-[920px]:grid-cols-1 max-[920px]:gap-4">
+          {values.map((item, index) => (
+            <article key={item.title} className="rounded-lg bg-[#8c3294] px-3 py-4 text-left text-white" data-reveal="up" data-reveal-delay={index * 80}>
               <span className="text-[19px]">◉</span>
               <h3 className="my-1.5 text-[38px] max-[920px]:text-[34px]">{item.title}</h3>
               <p className="m-0 text-[20px] leading-[1.25] max-[920px]:text-[18px]">{item.text}</p>
@@ -77,8 +81,8 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto grid w-full max-w-[960px] grid-cols-[0.9fr_1.1fr] items-center gap-6 px-6 pb-[42px] pt-6 max-[920px]:grid-cols-1">
-        <div>
+      <section className="mx-auto grid w-full max-w-[960px] grid-cols-[0.9fr_1.1fr] items-center gap-6 px-6 pb-[42px] pt-6 max-[920px]:grid-cols-1" data-reveal="up">
+        <div data-reveal="left" data-reveal-delay="70">
           <h2 className="m-0 text-[48px] leading-[1.1] text-[#222a67] max-[920px]:text-[34px]">
             <strong>Por dentro da Xpress:</strong>
             <br />
@@ -86,12 +90,46 @@ function AboutPage() {
           </h2>
           <div className="mb-5 mt-4 h-0.5 w-[70px] bg-[#b046ac]" />
         </div>
-        <div className="flex min-h-[300px] items-end justify-center rounded-[2px] bg-[linear-gradient(140deg,#a5a8ad,#dbdbd2_40%,#7f8188)] pb-3 text-white">
-          <small>• • • •</small>
+        <div className="relative grid min-h-[300px] place-items-center rounded-[2px] bg-[linear-gradient(140deg,#a5a8ad,#dbdbd2_40%,#7f8188)] p-4 text-white" data-reveal="right" data-reveal-delay="120">
+          <button
+            type="button"
+            aria-label="Slide anterior"
+            onClick={() => setInsideSlideIndex((prev) => (prev - 1 + insideSlides.length) % insideSlides.length)}
+            className="absolute left-0 top-1/2 -translate-y-1/2 border-0 bg-transparent px-2 text-[24px] text-white/75 transition-colors hover:text-white"
+          >
+            &#8249;
+          </button>
+
+          <button
+            type="button"
+            aria-label="Próximo slide"
+            onClick={() => setInsideSlideIndex((prev) => (prev + 1) % insideSlides.length)}
+            className="absolute right-0 top-1/2 -translate-y-1/2 border-0 bg-transparent px-2 text-[24px] text-white/75 transition-colors hover:text-white"
+          >
+            &#8250;
+          </button>
+
+          <span className="mt-6 text-[20px] tracking-[0.03em]">
+            {insideSlides[insideSlideIndex]}
+          </span>
+
+          <div className="absolute bottom-0 left-1/2 flex -translate-x-1/2 pb-2">
+            {insideSlides.map((slide, index) => (
+              <button
+                key={slide}
+                type="button"
+                aria-label={`Ir para slide ${index + 1}`}
+                onClick={() => setInsideSlideIndex(index)}
+                className={`mx-1 h-1.5 w-1.5 rounded-full border-0 transition-all ${
+                  index === insideSlideIndex ? 'bg-white' : 'bg-white/45 hover:bg-white/75'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="bg-[#252a63] pt-12 text-white">
+      <section className="bg-[#252a63] pt-12 text-white" data-reveal="up">
         <div className="mx-auto w-full max-w-[960px] px-6 text-center">
           <h2 className="m-0 text-[48px] leading-[1.1] max-[920px]:text-[34px]">Marcas que confiam na Xpress para se comunicar melhor</h2>
           <div className="mx-auto mb-6 mt-4 h-0.5 w-[70px] bg-[#b046ac]" />

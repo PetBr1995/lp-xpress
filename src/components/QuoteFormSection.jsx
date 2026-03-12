@@ -2,7 +2,7 @@ function QuoteFormSection({ id = 'orcamento', variant = 'dark', title }) {
   const transparent = variant === 'transparent'
 
   return (
-    <section id={id} className={`relative py-[44px] text-white ${transparent ? 'bg-transparent' : 'bg-[#252a63] pt-[60px]'}`}>
+    <section id={id} className={`relative py-[44px] text-white ${transparent ? 'bg-transparent' : 'bg-[#252a63] pt-[60px]'}`} data-reveal="up">
       {!transparent && (
         <div className="absolute -top-[17px] left-1/2 h-[34px] w-[34px] -translate-x-1/2 rotate-45 bg-[#252a63]" />
       )}

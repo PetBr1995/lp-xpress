@@ -79,7 +79,7 @@ function ServicesPage() {
 
   return (
     <>
-      <section className="grid h-[305px] place-items-center bg-[#8e8e8e] tracking-[0.03em] text-[#f3f3f3]">
+      <section className="grid h-[305px] place-items-center bg-[#8e8e8e] tracking-[0.03em] text-[#f3f3f3]" data-reveal="up">
         <span>BANNER</span>
       </section>
 
@@ -110,7 +110,9 @@ function ServicesPage() {
           return (
             <article
               key={item.title}
-              className={`mb-7 grid items-center gap-7 ${reversed ? 'grid-cols-[1.1fr_0.9fr] max-[920px]:grid-cols-1' : 'grid-cols-[0.9fr_1.1fr] max-[920px]:grid-cols-1'}`}
+              className={`mb-7 grid items-center gap-7 max-[920px]:mb-10 max-[920px]:gap-5 ${reversed ? 'grid-cols-[1.1fr_0.9fr] max-[920px]:grid-cols-1' : 'grid-cols-[0.9fr_1.1fr] max-[920px]:grid-cols-1'}`}
+              data-reveal="up"
+              data-reveal-delay={index * 70}
             >
               <div
                 ref={(node) => {
@@ -118,6 +120,8 @@ function ServicesPage() {
                 }}
                 data-service-title={item.title}
                 className={reversed ? 'order-2 max-[920px]:order-none' : ''}
+                data-reveal={reversed ? 'right' : 'left'}
+                data-reveal-delay="80"
               >
                 <h2 className="m-0 text-[38px] leading-[1.1] text-[#8f2d91] max-[920px]:text-[30px]">{item.title}</h2>
                 <div className="mb-5 mt-4 h-0.5 w-[70px] bg-[#b046ac]" />
@@ -133,6 +137,8 @@ function ServicesPage() {
                   : {
                     height: `${textHeights[item.title] ?? 260}px`,
                   }}
+                data-reveal={reversed ? 'left' : 'right'}
+                data-reveal-delay="120"
               >
                 <button
                   type="button"
