@@ -2,7 +2,7 @@ function EventsSection({ events }) {
   return (
     <section className="mx-auto grid w-full max-w-[960px] grid-cols-[1fr_auto] items-end justify-between gap-5 px-6 pt-11 max-[920px]:grid-cols-1">
       <div>
-        <h3 className="m-0 text-[45px] leading-[1.05] max-[920px]:text-[34px]">
+        <h3 className="m-0 text-[28px] font-black leading-[1.1] max-[920px]:text-[22px]">
           Grandes eventos
           <br />
           pedem grandes
