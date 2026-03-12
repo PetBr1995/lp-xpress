@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Footer from '../components/Footer'
 import MapSection from '../components/MapSection'
 import QuoteFormSection from '../components/QuoteFormSection'
+import BrandCarousel from '../components/BrandCarousel'
 import { brands } from '../data/content'
 
 const values = [
@@ -133,17 +134,7 @@ function AboutPage() {
         <div className="mx-auto w-full max-w-[960px] px-6 text-center">
           <h2 className="m-0 text-[48px] leading-[1.1] max-[920px]:text-[34px]">Marcas que confiam na Xpress para se comunicar melhor</h2>
           <div className="mx-auto mb-6 mt-4 h-0.5 w-[70px] bg-[#b046ac]" />
-          <div className="mt-[26px] flex flex-wrap items-center justify-center gap-9 max-[560px]:gap-3">
-            {brands.map((brand) => (
-              <img
-                key={brand.name}
-                className="h-auto max-h-11 w-auto max-w-[170px] object-contain max-[560px]:max-h-8 max-[560px]:max-w-[130px]"
-                src={brand.src}
-                alt={`Logo ${brand.name}`}
-                loading="lazy"
-              />
-            ))}
-          </div>
+          <BrandCarousel brands={brands} />
         </div>
 
         <QuoteFormSection id="orcamento" variant="transparent" />
