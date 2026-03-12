@@ -63,7 +63,7 @@ function ProjectsSection({ projects }) {
                 onClick={() => {
                   setActiveCardsByCategory((prev) => ({ ...prev, [activeCategory]: item }))
                 }}
-                className={`group relative h-[136px] overflow-hidden rounded-lg px-2.5 text-center text-[18px] uppercase text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_22px_rgba(25,29,52,0.35)] ${isActive ? 'shadow-[0_10px_22px_rgba(134,45,144,0.45)]' : ''}`}
+                className={`group relative h-[136px] overflow-hidden rounded-lg px-2.5 text-center text-[18px] uppercase text-white transition-all duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_6px_14px_rgba(25,29,52,0.22)] ${isActive ? 'shadow-[0_8px_18px_rgba(134,45,144,0.32)]' : ''}`}
                 data-reveal="zoom"
                 data-reveal-delay={index * 70}
               >
