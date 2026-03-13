@@ -1,6 +1,9 @@
 function EventsSection({ events }) {
   return (
-    <section className="mx-auto grid w-full max-w-[960px] grid-cols-[1fr_auto] items-end justify-between gap-5 px-6 pt-11 max-[920px]:grid-cols-1" data-reveal="up">
+    <section
+      className="mx-auto grid w-full max-w-[960px] grid-cols-[1fr_auto] items-end justify-between gap-5 px-6 pt-11 max-[920px]:grid-cols-1"
+      data-reveal="up"
+    >
       <div data-reveal="left" data-reveal-delay="60">
         <h3 className="m-0 text-[28px] font-black leading-[1.1] max-[920px]:text-[22px]">
           Grandes eventos
@@ -16,14 +19,23 @@ function EventsSection({ events }) {
 
       <div className="flex items-center gap-3 max-[560px]:flex-wrap max-[560px]:justify-center">
         {events.map((item, index) => (
-          <div key={item} className="text-center text-[12px]" data-reveal="zoom" data-reveal-delay={index * 70}>
-            <div className="mb-1.5 h-[102px] w-[102px] rounded-full bg-[linear-gradient(140deg,#294db2,#57aed6,#293266)]" />
-            <span>{item}</span>
+          <div
+            key={item}
+            className="text-center text-[12px]"
+            data-reveal="zoom"
+            data-reveal-delay={index * 70}
+          >
+            <img
+              src={item.image}
+              alt="imagem"
+              className="w-30 h-30 rounded-full p-2"
+            />
+            <span>{item.titulo}</span>
           </div>
         ))}
       </div>
     </section>
-  )
+  );
 }
 
-export default EventsSection
+export default EventsSection;

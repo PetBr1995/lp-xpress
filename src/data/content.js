@@ -21,7 +21,28 @@ export const services = [
   },
 ];
 
-export const events = ["Totens", "Fachada", "Stands", "Murais", "Espaço"];
+export const events = [
+  {
+    titulo: "Totens",
+    image: "/img-totens.png",
+  },
+  {
+    titulo: "Fachada",
+    image: "/img-faixas.png",
+  },
+  {
+    titulo: "Stands",
+    image: "/img-stands.png",
+  },
+  {
+    titulo: "Murais",
+    image: "/img-murais.png",
+  },
+  {
+    titulo: "Espaço",
+    image: "/img-display.png",
+  },
+];
 
 export const projects = {
   graficaRapida: [
