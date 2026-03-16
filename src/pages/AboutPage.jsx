@@ -5,19 +5,23 @@ import QuoteFormSection from '../components/QuoteFormSection'
 import BrandCarousel from '../components/BrandCarousel'
 import { brands } from '../data/content'
 import Seo from '../components/Seo'
+import { image } from 'framer-motion/client'
 
 const values = [
   {
     title: 'Missão',
     text: 'Oferecer soluções em comunicação visual, gráfica rápida e personalização que ajudem empresas e pessoas a se comunicarem com mais clareza e impacto.',
+    image:'/MISSAO.png'
   },
   {
     title: 'Visão',
     text: 'Ser referência em qualidade, agilidade e atendimento humano no segmento de comunicação visual e personalização.',
+    image:'/VISAO.png'
   },
   {
     title: 'Valores',
     text: 'Qualidade em cada detalhe, respeito aos prazos, atendimento próximo, ética, criatividade e inovação.',
+    image:'/VALORE.png'
   },
 ]
 
@@ -87,7 +91,7 @@ function AboutPage() {
         <div className="grid grid-cols-3 gap-2 max-[920px]:grid-cols-1 max-[920px]:gap-4">
           {values.map((item, index) => (
             <article key={item.title} className="rounded-lg bg-[#8c3294] px-3 py-4 text-left text-white" data-reveal="up" data-reveal-delay={index * 80}>
-              <span className="text-[19px]">◉</span>
+              <img src={item.image} alt="icone" className='w-10' />
               <h3 className="my-1.5 text-[38px] max-[920px]:text-[34px]">{item.title}</h3>
               <p className="m-0 text-[20px] leading-[1.25] max-[920px]:text-[18px]">{item.text}</p>
             </article>

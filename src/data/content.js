@@ -121,4 +121,4 @@ export const brands = [
   { name: "Tore", src: "/logo-tore.png" },
   { name: "Amazon IA", src: "/logo-amazon-ia.png" },
   { name: "DSX", src: "/logo-dsx.png" },
-];
+]; 
