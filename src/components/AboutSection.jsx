@@ -6,14 +6,9 @@ function AboutSection() {
       data-reveal="up"
     >
       <div data-reveal="left" data-reveal-delay="80">
-        <h2 className="m-0 text-[45px] leading-[1.05] max-[920px]:text-[34px]">
-          Desde 2010, imprimindo
-          <br />
-          projetos e ideias com
-          <br />
-          excelência.
-        </h2>
+        <h1 className="m-0 text-[30px] font-black mb-2">Imprimindo projetos e ideias com excelência</h1>
         <p className="mt-4 leading-[1.45] text-[#50546e]">
+          Desde 2010, imprimindo projetos e ideias com excelência.{' '}
           A <strong>Gráfica Xpress</strong> nasceu com o propósito de oferecer soluções em comunicação visual e
           gráfica rápida para os mais diversos segmentos. Contamos com tecnologia avançada para impressão,
           corte de materiais rígidos, bordados e muito mais, sempre focados em entregar produtos e serviços
