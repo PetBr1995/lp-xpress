@@ -5,7 +5,7 @@ export const services = [
     icon: "/COM-VISUAL.png",
   },
   {
-    title: "Confecção",
+    title: "Malharia",
     text: "Oferecemos serviços de malharia para camisas, também uniformes, com produção sob demanda e corte personalizado conforme o objetivo da sua marca.",
     icon: "/MALHARIA.png",
   },
