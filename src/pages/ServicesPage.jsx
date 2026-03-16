@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 import MapSection from '../components/MapSection'
 import QuoteFormSection from '../components/QuoteFormSection'
 import Seo from '../components/Seo'
+import { companyUnits } from '../data/content'
 
 const serviceHighlights = [
   {
@@ -37,11 +38,6 @@ function ServicesPage() {
   const [textHeights, setTextHeights] = useState({})
   const [isMobileLayout, setIsMobileLayout] = useState(false)
   const textRefs = useRef({})
-
-  const servicesMapEmbedUrl =
-    'https://www.google.com/maps?q=-3.093978,-59.9965769&z=18&output=embed'
-  const servicesMapLinkUrl =
-    'https://www.google.com/maps/place/Digital+Comunica%C3%A7%C3%A3o/@-3.094277,-59.9973221,19.54z/data=!4m7!3m6!1s0x926c1acf522d7923:0x3750b368bca24011!4b1!8m2!3d-3.093978!4d-59.9965769!16s%2Fg%2F1q62bwj4m?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D'
 
   useEffect(() => {
     const syncLayout = () => setIsMobileLayout(window.innerWidth <= 920)
@@ -193,7 +189,7 @@ function ServicesPage() {
 
       <QuoteFormSection id="orcamento" />
 
-      <MapSection interactive mapEmbedUrl={servicesMapEmbedUrl} mapLinkUrl={servicesMapLinkUrl} />
+      <MapSection interactive locations={companyUnits} />
       <Footer />
     </>
   )

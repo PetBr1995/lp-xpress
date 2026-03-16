@@ -3,9 +3,8 @@ import Footer from '../components/Footer'
 import MapSection from '../components/MapSection'
 import QuoteFormSection from '../components/QuoteFormSection'
 import BrandCarousel from '../components/BrandCarousel'
-import { brands } from '../data/content'
+import { brands, companyUnits } from '../data/content'
 import Seo from '../components/Seo'
-import { image } from 'framer-motion/client'
 
 const values = [
   {
@@ -29,10 +28,6 @@ function AboutPage() {
   const [insideSlideIndex, setInsideSlideIndex] = useState(0)
 
   const insideSlides = ['PRODUÇÃO', 'ATENDIMENTO', 'ACABAMENTO', 'IMPRESSÃO']
-  const aboutMapEmbedUrl =
-    'https://www.google.com/maps?q=-3.093978,-59.9965769&z=18&output=embed'
-  const aboutMapLinkUrl =
-    'https://www.google.com/maps/place/Digital+Comunica%C3%A7%C3%A3o/@-3.094277,-59.9973221,19.54z/data=!4m7!3m6!1s0x926c1acf522d7923:0x3750b368bca24011!4b1!8m2!3d-3.093978!4d-59.9965769!16s%2Fg%2F1q62bwj4m?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D'
 
   return (
     <>
@@ -157,7 +152,7 @@ function AboutPage() {
         <QuoteFormSection id="orcamento" variant="transparent" />
       </section>
 
-      <MapSection interactive mapEmbedUrl={aboutMapEmbedUrl} mapLinkUrl={aboutMapLinkUrl} />
+      <MapSection interactive locations={companyUnits} />
       <Footer />
     </>
   )

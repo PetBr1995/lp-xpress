@@ -1,8 +1,8 @@
 function BrandCarousel({ brands }) {
   return (
-    <div className="brand-carousel-mask mt-[26px] overflow-hidden">
-      <div className="brand-carousel-track flex w-max items-center gap-6">
-        <div className="flex shrink-0 items-center gap-6">
+    <div className="brand-carousel-mask mt-[26px] overflow-hidden px-3 sm:px-5">
+      <div className="brand-carousel-track flex w-max items-center gap-9">
+        <div className="flex shrink-0 items-center gap-9">
           {brands.map((brand) => (
             <img
               key={`brand-a-${brand.name}`}
@@ -14,7 +14,7 @@ function BrandCarousel({ brands }) {
           ))}
         </div>
 
-        <div className="flex shrink-0 items-center gap-6" aria-hidden="true">
+        <div className="flex shrink-0 items-center gap-9" aria-hidden="true">
           {brands.map((brand) => (
             <img
               key={`brand-b-${brand.name}`}

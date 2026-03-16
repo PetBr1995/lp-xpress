@@ -1,43 +1,60 @@
 function Footer() {
   return (
     <footer id="contato" className="bg-[#232860] py-10 text-white" data-reveal="up">
-      <div className="mx-auto grid w-full max-w-[960px] grid-cols-[1fr_1.5fr] gap-[30px] px-6 max-[920px]:grid-cols-1">
-        <div>
-          <ul className="mb-[18px] mt-0 list-none p-0 leading-[1.9]">
-            <li><a className="text-white no-underline" href="/#home">HOME</a></li>
-            <li><a className="text-white no-underline" href="/servicos">SERVIÇOS</a></li>
-            <li><a className="text-white no-underline" href="/sobre">SOBRE</a></li>
-          </ul>
+      <div className="mx-auto w-full max-w-[960px] px-6">
+        <div className="grid gap-8 border-b border-white/20 pb-7 md:grid-cols-[1.2fr_0.8fr_1fr] md:gap-6">
+          <div>
+            <img src="/logo-xpress-colorfull.png" alt="Xpress" className="mb-3 h-12 w-auto object-contain" />
+            <p className="m-0 max-w-[320px] text-[14px] leading-[1.55] text-white/85">
+              Soluções em comunicação visual, gráfica rápida e personalizados para fortalecer sua marca.
+            </p>
+          </div>
 
-          <p className="flex items-center gap-2">
-            <img src="/icon-telefone.png" alt="Telefone" className="h-[18px] w-[18px] object-contain" />
-            <span className="leading-[1.4]">(92) 3087-4450 | (92) 98388-8682</span>
-          </p>
+          <div>
+            <h3 className="mb-3 mt-0 text-[15px] tracking-[0.08em] text-white/70">NAVEGAÇÃO</h3>
+            <ul className="m-0 list-none p-0">
+              <li className="mb-2">
+                <a className="text-[14px] text-white no-underline transition-colors hover:text-[#8f2d91]" href="/#home">
+                  HOME
+                </a>
+              </li>
+              <li className="mb-2">
+                <a className="text-[14px] text-white no-underline transition-colors hover:text-[#8f2d91]" href="/servicos">
+                  SERVIÇOS
+                </a>
+              </li>
+              <li>
+                <a className="text-[14px] text-white no-underline transition-colors hover:text-[#8f2d91]" href="/sobre">
+                  SOBRE
+                </a>
+              </li>
+            </ul>
+          </div>
 
-          <div className="mt-2.5 flex gap-2.5">
-            <a href="#" aria-label="Facebook" className="inline-flex">
-              <img src="/icon-facebook.png" alt="Facebook" className="h-5 w-5 object-contain" />
-            </a>
-            <a href="#" aria-label="Instagram" className="inline-flex">
-              <img src="/icon-instagram.png" alt="Instagram" className="h-5 w-5 object-contain" />
-            </a>
-            <a href="#" aria-label="YouTube" className="inline-flex">
-              <img src="/icon-youtube.png" alt="YouTube" className="h-5 w-5 object-contain" />
-            </a>
+          <div>
+            <h3 className="mb-3 mt-0 text-[15px] tracking-[0.08em] text-white/70">CONTATO</h3>
+            <p className="m-0 flex items-center gap-2 text-[14px]">
+              <img src="/icon-telefone.png" alt="Telefone" className="h-[18px] w-[18px] object-contain" />
+              <span className="leading-[1.4]">(92) 3087-4450 | (92) 98388-8682</span>
+            </p>
+
+            <div className="mt-3 flex gap-2.5">
+              <a href="#" aria-label="Facebook" className="inline-flex rounded-full border border-white/25 p-1.5 transition-colors hover:border-white/70">
+                <img src="/icon-facebook.png" alt="Facebook" className="h-4 w-4 object-contain" />
+              </a>
+              <a href="#" aria-label="Instagram" className="inline-flex rounded-full border border-white/25 p-1.5 transition-colors hover:border-white/70">
+                <img src="/icon-instagram.png" alt="Instagram" className="h-4 w-4 object-contain" />
+              </a>
+              <a href="#" aria-label="YouTube" className="inline-flex rounded-full border border-white/25 p-1.5 transition-colors hover:border-white/70">
+                <img src="/icon-youtube.png" alt="YouTube" className="h-4 w-4 object-contain" />
+              </a>
+            </div>
           </div>
         </div>
 
-        <div>
-          <h4 className="mb-4 mt-0 text-[32px] leading-[1.15]">Assine nossa newsletter e fique por dentro de dicas, inspirações e novidades da Xpress</h4>
-          <div className="flex gap-2.5 max-[560px]:flex-col">
-            <input
-              type="text"
-              placeholder="Digite o endereço de e-mail"
-              className="flex-1 border border-white bg-[#232860] px-2.5 py-2.5 text-white placeholder:text-white/70 focus:outline-none"
-            />
-            <button className="border-0 bg-white px-3.5 py-2.5 font-bold text-[#232860]">Assinar</button>
-          </div>
-        </div>
+        <p className="mb-0 mt-4 text-[12px] tracking-[0.04em] text-white/65">
+          © {new Date().getFullYear()} Gráfica Xpress. Todos os direitos reservados.
+        </p>
       </div>
     </footer>
   )

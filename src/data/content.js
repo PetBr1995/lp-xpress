@@ -121,4 +121,23 @@ export const brands = [
   { name: "Tore", src: "/logo-tore.png" },
   { name: "Amazon IA", src: "/logo-amazon-ia.png" },
   { name: "DSX", src: "/logo-dsx.png" },
-]; 
+];
+
+export const companyUnits = [
+  {
+    title: "Unidade Morada do Sol",
+    description: "Av. André Araújo, nº 2679 – Aleixo",
+    mapEmbedUrl:
+      "https://www.google.com/maps?q=Av.+Andr%C3%A9+Ara%C3%BAjo,+2679,+Aleixo,+Manaus,+AM&z=17&output=embed",
+    mapLinkUrl:
+      "https://www.google.com/maps/search/?api=1&query=Av.+Andr%C3%A9+Ara%C3%BAjo,+2679,+Aleixo,+Manaus,+AM",
+  },
+  {
+    title: "Unidade André Araújo",
+    description: "R. Planeta Júpiter, 5 – Aleixo",
+    mapEmbedUrl:
+      "https://www.google.com/maps?q=R.+Planeta+J%C3%BApiter,+5,+Aleixo,+Manaus,+AM&z=17&output=embed",
+    mapLinkUrl:
+      "https://www.google.com/maps/search/?api=1&query=R.+Planeta+J%C3%BApiter,+5,+Aleixo,+Manaus,+AM",
+  },
+];
