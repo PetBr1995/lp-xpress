@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 function Header({ currentPage = 'home', quoteHref = '/#contato' }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const navBase = 'text-[13px] tracking-[0.05em] text-[#6b6b7a] transition-colors duration-200 hover:text-[#8f2d91]'
+  const navBase = 'text-[15px] tracking-[0.05em] text-[#6b6b7a] transition-colors duration-200 hover:text-[#8f2d91]'
   const active = 'font-bold text-[#8f2d91]'
   const quoteBtnClassName = 'relative inline-flex items-center justify-center overflow-hidden rounded-md px-5 py-2.5 text-[12px] font-bold text-white'
   const quoteBtnStyle = {
