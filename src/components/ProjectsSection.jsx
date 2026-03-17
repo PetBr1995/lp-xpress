@@ -53,7 +53,8 @@ function ProjectsSection({ projects }) {
         <div className="grid grid-cols-4 gap-1 max-[920px]:grid-cols-2 max-[920px]:gap-3 max-[560px]:grid-cols-1">
           {activeProjects.map((project, index) => {
             const isActive = activeCardsByCategory[activeCategory] === project
-            const backgroundImageUrl = project.image || '/img-home-xpress.png'
+            const imageUrl = project.image || '/img-home-xpress.png'
+            const backgroundImageUrl = encodeURI(imageUrl)
             const buttonStyle = {
               backgroundImage: `linear-gradient(180deg, rgba(8, 14, 35, 0.85), rgba(8, 14, 35, 0.45)), url('${backgroundImageUrl}')`,
               backgroundSize: 'cover',
