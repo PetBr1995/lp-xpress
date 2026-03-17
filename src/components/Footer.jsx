@@ -1,3 +1,5 @@
+import { FacebookIcon, InstagramIcon, PhoneIcon, YoutubeIcon } from './SocialIcons'
+
 function Footer() {
   return (
     <footer id="contato" className="bg-[#232860] py-10 text-white" data-reveal="up">
@@ -33,20 +35,32 @@ function Footer() {
 
           <div>
             <h3 className="mb-3 mt-0 text-[15px] tracking-[0.08em] text-white/70">CONTATO</h3>
-            <p className="m-0 flex items-center gap-2 text-[14px]">
-              <img src="/icon-telefone.png" alt="Telefone" className="h-[18px] w-[18px] object-contain" />
+            <p className="m-0 flex items-center gap-3 text-[14px] text-white">
+              <PhoneIcon className="h-5 w-5 text-white" />
               <span className="leading-[1.4]">(92) 3087-4450 | (92) 98388-8682</span>
             </p>
 
-            <div className="mt-3 flex gap-2.5">
-              <a href="#" aria-label="Facebook" className="inline-flex rounded-full border border-white/25 p-1.5 transition-colors hover:border-white/70">
-                <img src="/icon-facebook.png" alt="Facebook" className="h-4 w-4 object-contain" />
+            <div className="mt-3 flex gap-3">
+              <a
+                href="#"
+                aria-label="Facebook"
+                className="inline-flex rounded-full border border-white/20 bg-white/10 p-2 text-white transition-colors hover:border-white/60 hover:bg-white/20"
+              >
+                <FacebookIcon className="h-5 w-5 text-white" />
               </a>
-              <a href="#" aria-label="Instagram" className="inline-flex rounded-full border border-white/25 p-1.5 transition-colors hover:border-white/70">
-                <img src="/icon-instagram.png" alt="Instagram" className="h-4 w-4 object-contain" />
+              <a
+                href="#"
+                aria-label="Instagram"
+                className="inline-flex rounded-full border border-white/20 bg-white/10 p-2 text-white transition-colors hover:border-white/60 hover:bg-white/20"
+              >
+                <InstagramIcon className="h-5 w-5 text-white" />
               </a>
-              <a href="#" aria-label="YouTube" className="inline-flex rounded-full border border-white/25 p-1.5 transition-colors hover:border-white/70">
-                <img src="/icon-youtube.png" alt="YouTube" className="h-4 w-4 object-contain" />
+              <a
+                href="#"
+                aria-label="YouTube"
+                className="inline-flex rounded-full border border-white/20 bg-white/10 p-2 text-white transition-colors hover:border-white/60 hover:bg-white/20"
+              >
+                <YoutubeIcon className="h-5 w-5 text-white" />
               </a>
             </div>
           </div>

@@ -22,7 +22,7 @@ function BotaoWP() {
       style={{
         position: 'fixed',
         bottom: '50px',
-        left: '20px',
+        right: '20px',
         zIndex: 50,
       }}
       initial={{ opacity: 0, scale: 0.8, y: 10 }}

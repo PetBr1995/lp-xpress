@@ -111,7 +111,7 @@ function Header({ currentPage = 'home', quoteHref = '/#contato' }) {
           isMobileMenuOpen
             ? 'max-h-64 translate-y-0 pb-4 pt-3 opacity-100'
             : 'pointer-events-none max-h-0 -translate-y-1 py-0 opacity-0'
-        }`}
+        } max-[920px]:px-4`}
       >
         <nav className="flex flex-col gap-3">
           <a href="/#home" onClick={closeMobileMenu} className={`${navBase} ${currentPage === 'home' ? active : ''}`}>HOME</a>

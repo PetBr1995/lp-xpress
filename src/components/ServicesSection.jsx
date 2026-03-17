@@ -14,49 +14,47 @@ function ServicesSection({ services }) {
       </p>
 
       {/* ── DESKTOP: timeline horizontal ── */}
-      <div className="relative flex items-center max-[920px]:hidden">
+      <div className="relative max-[920px]:hidden">
+
+        {/* Linha central horizontal */}
         <div className="pointer-events-none absolute top-1/2 left-0 w-full h-[2px] -translate-y-1/2 bg-[#8c3294]" />
 
         <div className="relative z-10 grid grid-cols-4 w-full gap-x-4">
           {services.map((service, index) => {
             const isAbove = index % 2 === 0
+
+            const Card = ({ hidden = false }) => (
+              <article
+                className={`rounded-lg bg-[#8c3294] px-4 py-5 text-left text-white transition-transform duration-300 w-full ${hidden ? 'invisible' : ''}`}
+                data-reveal={hidden ? undefined : 'zoom'}
+                data-reveal-delay={hidden ? undefined : index * 80}
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <img src={service.icon} alt="icone" className="w-10" />
+                  <h4 className="my-2 text-[20px] font-black leading-[1.1]">{service.title}</h4>
+                </div>
+                <p className="m-0 text-[14px] leading-[1.32]">{service.text}</p>
+              </article>
+            )
+
             return (
               <div key={service.title} className="flex flex-col items-center">
-                <div className="w-full">
-                  {isAbove && (
-                    <article
-                      className="rounded-lg bg-[#8c3294] px-4 py-5 text-left text-white transition-transform duration-300 mb-2"
-                      data-reveal="zoom"
-                      data-reveal-delay={index * 80}
-                    >
-                      <img src={service.icon} alt="icone" className="w-10" />
-                      <h4 className="my-2 text-[23px] leading-[1.1]">{service.title}</h4>
-                      <p className="m-0 text-[14px] leading-[1.32]">{service.text}</p>
-                    </article>
-                  )}
-                  {!isAbove && <div className="h-10" />}
-                </div>
 
-                <div className="flex flex-col items-center">
-                  <div className={`w-[2px] h-5 ${isAbove ? 'bg-[#8c3294]' : 'bg-transparent'}`} />
-                  <div className="timeline-bullet w-4 h-4 rounded-full bg-[#8c3294] border-[3px] border-white outline outline-2 outline-[#8c3294] flex-shrink-0 shadow-[0_0_14px_rgba(140,50,148,0.4)]" />
-                  <div className={`w-[2px] h-5 ${!isAbove ? 'bg-[#8c3294]' : 'bg-transparent'}`} />
-                </div>
+                {/* Slot superior: card real (acima) ou card fantasma (abaixo) */}
+                {isAbove ? <Card /> : <Card hidden />}
 
-                <div className="w-full">
-                  {!isAbove && (
-                    <article
-                      className="rounded-lg bg-[#8c3294] px-4 py-5 text-left text-white transition-transform duration-300 mt-2"
-                      data-reveal="zoom"
-                      data-reveal-delay={index * 80}
-                    >
-                      <img src={service.icon} alt="icone" className="w-10" />
-                      <h4 className="my-2 text-[23px] leading-[1.1]">{service.title}</h4>
-                      <p className="m-0 text-[14px] leading-[1.32]">{service.text}</p>
-                    </article>
-                  )}
-                  {isAbove && <div className="h-10" />}
-                </div>
+                {/* Ramificação superior: conecta o card de cima ao ponto */}
+                <div className={`w-[2px] flex-1 min-h-[20px] ${isAbove ? 'bg-[#8c3294]' : 'bg-transparent'}`} />
+
+                {/* Ponto central na linha */}
+                <div className="timeline-bullet w-4 h-4 rounded-full bg-[#8c3294] border-[3px] border-white outline outline-2 outline-[#8c3294] flex-shrink-0 shadow-[0_0_14px_rgba(140,50,148,0.4)]" />
+
+                {/* Ramificação inferior: conecta o ponto ao card de baixo */}
+                <div className={`w-[2px] flex-1 min-h-[20px] ${!isAbove ? 'bg-[#8c3294]' : 'bg-transparent'}`} />
+
+                {/* Slot inferior: card real (abaixo) ou card fantasma (acima) */}
+                {!isAbove ? <Card /> : <Card hidden />}
+
               </div>
             )
           })}
@@ -80,8 +78,10 @@ function ServicesSection({ services }) {
               data-reveal="zoom"
               data-reveal-delay={index * 80}
             >
-              <img src={service.icon} alt="icone" className="w-10" />
-              <h4 className="my-2 text-[20px] leading-[1.1]">{service.title}</h4>
+              <div>
+                <img src={service.icon} alt="icone" className="w-10" />
+                <h4 className="my-2 text-[20px] leading-[1.1]">{service.title}</h4>
+              </div>
               <p className="m-0 text-[14px] leading-[1.32]">{service.text}</p>
             </article>
           </div>
