@@ -46,14 +46,12 @@ export const events = [
 
 export const projects = {
   graficaRapida: [
-    { label: "Cartões de Visita", image: "/img-totens.png" },
-    { label: "Panfletos", image: "" },
-    { label: "Folders", image: "" },
-    { label: "Cardápios", image: "" },
-    { label: "Adesivos", image: "" },
-    { label: "Blocos", image: "" },
-    { label: "Receituários", image: "" },
-    { label: "Convites", image: "" },
+    { label: "Folder", image: "/img-totens.png" },
+    { label: "Material Gráfico em Geral", image: "" },
+    { label: "Impressão de Fotos", image: "" },
+    { label: "Papel de Rifa", image: "" },
+    { label: "Cartão de Visita", image: "" },
+    { label: "Cardápio", image: "" },
   ],
   comunicacaoVisual: [
     { label: "Fachadas", image: "" },
