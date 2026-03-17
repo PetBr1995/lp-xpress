@@ -6,7 +6,11 @@ function AboutSection() {
       data-reveal="up"
     >
       <div data-reveal="left" data-reveal-delay="80">
-        <h1 className="m-0 text-[30px] font-black mb-2">Imprimindo projetos e ideias com excelência</h1>
+        <h1 className="m-0 text-[30px] font-black mb-2">
+          imprimindo projetos
+          <br />
+          e ideias com excelência
+        </h1>
         <p className="mt-4 leading-[1.45] text-[#50546e]">
           Desde 2010, imprimindo projetos e ideias com excelência.{' '}
           A <strong>Gráfica Xpress</strong> nasceu com o propósito de oferecer soluções em comunicação visual e
