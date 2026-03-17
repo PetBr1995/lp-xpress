@@ -28,7 +28,7 @@ function EventsSection({ events }) {
             <img
               src={item.image}
               alt="imagem"
-              className="w-30 h-30 rounded-full p-2"
+              className="w-30 h-30 rounded-full p-2 object-cover"
             />
             <span>{item.titulo}</span>
           </div>
