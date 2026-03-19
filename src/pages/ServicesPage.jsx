@@ -88,8 +88,20 @@ function ServicesPage() {
           description: 'Página de serviços da Gráfica Xpress.',
         }}
       />
-      <section className="grid h-[305px] place-items-center bg-[#8e8e8e] tracking-[0.03em] text-[#f3f3f3]" data-reveal="up">
-        <span>BANNER</span>
+      <section
+        className="relative w-full overflow-hidden aspect-[1920/700] max-[768px]:aspect-[1080/700]"
+        data-reveal="up"
+      >
+        <picture className="absolute inset-0">
+          <source media="(max-width: 768px)" srcSet="/banners/25-[Xpress]Site-BANNERS-5-MOBILE.png" />
+          <img
+            src="/banners/25-[Xpress]Site-BANNERS-5.png"
+            alt="Banner de serviços"
+            className="h-full w-full object-cover object-center"
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
       </section>
 
       <section className="mx-auto w-full max-w-[960px] px-6 pb-[38px] pt-10">
