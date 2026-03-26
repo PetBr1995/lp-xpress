@@ -70,14 +70,14 @@ function BlogSection({ blogs = [] }) {
   }, [blogs])
 
   return (
-    <section className="mx-auto w-full max-w-[960px] px-6 py-14 text-center" data-reveal="up">
-      <h3 className="m-0 text-[48px] leading-[1.05] max-[920px]:text-[34px]">Blog</h3>
+    <section className="mx-auto w-full max-w-[960px] px-6 py-14 text-center max-[920px]:py-11" data-reveal="up">
+      <h3 className="m-0 text-[48px] leading-[1.05] max-[920px]:text-[30px]">Blog</h3>
 
-      <div className="mt-[26px] flex flex-wrap justify-center gap-4 max-[560px]:gap-6">
+      <div className="mt-[26px] flex flex-wrap justify-center gap-4 max-[560px]:gap-5">
         {posts.map((post, index) => (
           <article
             key={post._id || `${post.url}-${index}`}
-            className="flex min-h-[380px] w-full max-w-[280px] flex-col text-left"
+            className="flex min-h-[380px] w-full max-w-[280px] flex-col text-left max-[560px]:min-h-[340px] max-[560px]:max-w-[360px]"
             data-reveal="up"
             data-reveal-delay={index * 90}
           >
@@ -92,14 +92,14 @@ function BlogSection({ blogs = [] }) {
               <div className="mb-2.5 h-[150px] rounded-lg bg-[linear-gradient(130deg,#6091b2,#d6d8e0)]" />
             )}
             <small className="text-[12px] text-[#6a6f8f]">{post.date}</small>
-            <h4 className="my-1.5 text-[22px] leading-[1.2]">{post.title}</h4>
+            <h4 className="my-1.5 text-[22px] leading-[1.2] max-[560px]:text-[20px]">{post.title}</h4>
             <p className="overflow-hidden pb-3 text-ellipsis text-[14px] leading-[1.5] text-[#50546e] [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:4]">
               {post.text}
             </p>
             <a
               href={post.url}
               data-native-nav
-              className="mt-auto w-fit rounded-md bg-[#222a67] px-5 py-2 text-[12px] text-white no-underline"
+              className="mt-auto w-fit rounded-md bg-[#222a67] px-5 py-2 text-[12px] text-white no-underline max-[560px]:px-4"
             >
               Saiba mais
             </a>

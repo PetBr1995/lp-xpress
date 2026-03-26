@@ -2,11 +2,11 @@ import { FacebookIcon, InstagramIcon, PhoneIcon, YoutubeIcon } from './SocialIco
 
 function Footer() {
   return (
-    <footer id="contato" className="bg-[#232860] py-10 text-white" data-reveal="up">
+    <footer id="contato" className="bg-[#232860] py-10 text-white max-[920px]:py-8" data-reveal="up">
       <div className="mx-auto w-full max-w-[960px] px-6">
-        <div className="grid gap-8 border-b border-white/20 pb-7 md:grid-cols-[1.2fr_0.8fr_1fr] md:gap-6">
+        <div className="grid gap-8 border-b border-white/20 pb-7 md:grid-cols-[1.2fr_0.8fr_1fr] md:gap-6 max-[920px]:gap-6 max-[920px]:pb-6">
           <div>
-            <img src="/logo-xpress-colorfull.png" alt="Xpress" className="mb-3 h-12 w-auto object-contain" />
+            <img src="/logo-xpress-colorfull.png" alt="Xpress" className="mb-3 h-12 w-auto object-contain max-[920px]:h-10" />
             <p className="m-0 max-w-[320px] text-[14px] leading-[1.55] text-white/85">
               Soluções em comunicação visual, gráfica rápida e personalizados para fortalecer sua marca.
             </p>
@@ -44,21 +44,21 @@ function Footer() {
               <a
                 href="#"
                 aria-label="Facebook"
-                className="inline-flex rounded-full border border-white/20 bg-white/10 p-2 text-white transition-colors hover:border-white/60 hover:bg-white/20"
+                className="inline-flex rounded-full border border-white/20 bg-white/10 p-2 text-white transition-colors hover:border-white/60 hover:bg-white/20 max-[920px]:p-2.5"
               >
                 <FacebookIcon className="h-5 w-5 text-white" />
               </a>
               <a
                 href="#"
                 aria-label="Instagram"
-                className="inline-flex rounded-full border border-white/20 bg-white/10 p-2 text-white transition-colors hover:border-white/60 hover:bg-white/20"
+                className="inline-flex rounded-full border border-white/20 bg-white/10 p-2 text-white transition-colors hover:border-white/60 hover:bg-white/20 max-[920px]:p-2.5"
               >
                 <InstagramIcon className="h-5 w-5 text-white" />
               </a>
               <a
                 href="#"
                 aria-label="YouTube"
-                className="inline-flex rounded-full border border-white/20 bg-white/10 p-2 text-white transition-colors hover:border-white/60 hover:bg-white/20"
+                className="inline-flex rounded-full border border-white/20 bg-white/10 p-2 text-white transition-colors hover:border-white/60 hover:bg-white/20 max-[920px]:p-2.5"
               >
                 <YoutubeIcon className="h-5 w-5 text-white" />
               </a>
@@ -66,7 +66,7 @@ function Footer() {
           </div>
         </div>
 
-        <p className="mb-0 mt-4 text-[12px] tracking-[0.04em] text-white/65">
+        <p className="mb-0 mt-4 text-[12px] tracking-[0.04em] text-white/65 max-[920px]:text-[11px]">
           © {new Date().getFullYear()} Gráfica Xpress. Todos os direitos reservados.
         </p>
       </div>

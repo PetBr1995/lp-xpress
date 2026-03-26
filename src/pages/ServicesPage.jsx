@@ -104,7 +104,7 @@ function ServicesPage() {
         </picture>
       </section>
 
-      <section className="mx-auto w-full max-w-[960px] px-6 pb-[38px] pt-10">
+      <section className="mx-auto w-full max-w-[960px] px-6 pb-12 pt-12 max-[920px]:px-4 max-[920px]:pb-10 max-[920px]:pt-9">
         {serviceHighlights.map((item, index) => {
           const reversed = index % 2 === 1
           const currentSlideIndex = slideIndexByService[item.title] ?? 0
@@ -131,7 +131,7 @@ function ServicesPage() {
           return (
             <article
               key={item.title}
-              className={`mb-7 grid items-center gap-7 max-[920px]:mb-10 max-[920px]:gap-5 ${reversed ? 'grid-cols-[1.1fr_0.9fr] max-[920px]:grid-cols-1' : 'grid-cols-[0.9fr_1.1fr] max-[920px]:grid-cols-1'}`}
+              className={`mb-10 grid items-center gap-7 max-[920px]:mb-8 max-[920px]:gap-4 ${reversed ? 'grid-cols-[1.1fr_0.9fr] max-[920px]:grid-cols-1' : 'grid-cols-[0.9fr_1.1fr] max-[920px]:grid-cols-1'}`}
               data-reveal="up"
               data-reveal-delay={index * 70}
             >
@@ -144,19 +144,19 @@ function ServicesPage() {
                 data-reveal={reversed ? 'right' : 'left'}
                 data-reveal-delay="80"
               >
-                <h2 className="m-0 text-[38px] leading-[1.1] text-[#8f2d91] max-[920px]:text-[30px]">{item.title}</h2>
+                <h2 className="m-0 text-[30px] leading-[1.1] text-[#8f2d91] max-[920px]:text-[24px]">{item.title}</h2>
                 <div className="mb-5 mt-4 h-0.5 w-[70px] bg-[#b046ac]" />
-                <p className="m-0 text-[29px] leading-[1.22] font-normal text-[#5b6179] max-[920px]:text-[18px]">
+                <p className="m-0 text-[17px] leading-[1.5] font-normal text-[#5b6179] max-[920px]:text-[15px]">
                   {item.description}
                 </p>
               </div>
 
               <div
-                className={`relative grid w-full place-items-center bg-[#8d8d8d] p-4 text-white max-[920px]:h-[260px] max-[920px]:w-full ${reversed ? 'order-1 max-[920px]:order-none' : ''}`}
+                className={`relative grid w-full place-items-center bg-[#8d8d8d] p-5 text-white max-[920px]:h-[220px] max-[920px]:w-full ${reversed ? 'order-1 max-[920px]:order-none' : ''}`}
                 style={isMobileLayout
                   ? undefined
                   : {
-                    height: `${textHeights[item.title] ?? 260}px`,
+                    height: `${textHeights[item.title] ?? 240}px`,
                   }}
                 data-reveal={reversed ? 'left' : 'right'}
                 data-reveal-delay="120"
@@ -177,7 +177,7 @@ function ServicesPage() {
                 >
                   &#8250;
                 </button>
-                <span className="mt-6 text-[22px] transition-opacity duration-300">
+                <span className="mt-5 text-[16px] tracking-[0.03em] transition-opacity duration-300">
                   {currentSlideLabel}
                 </span>
                 <div className="mt-1.5 flex">

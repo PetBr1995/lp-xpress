@@ -21,8 +21,8 @@ function BotaoWP() {
       rel="noopener noreferrer"
       style={{
         position: 'fixed',
-        bottom: '50px',
-        right: '20px',
+        bottom: 'max(18px, calc(env(safe-area-inset-bottom) + 8px))',
+        right: '14px',
         zIndex: 50,
       }}
       initial={{ opacity: 0, scale: 0.8, y: 10 }}

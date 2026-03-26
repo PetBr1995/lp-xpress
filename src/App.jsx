@@ -182,7 +182,7 @@ function App() {
   }
 
   return (
-    <div className="pt-[92px]">
+    <div className="pt-[92px] max-[920px]:pt-[78px]">
       <Header currentPage={currentPage} quoteHref={quoteHref} />
       <main className={`route-transition ${transitionState}`}>
         {page}

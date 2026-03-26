@@ -2,14 +2,14 @@ function ServicesSection({ services }) {
   return (
     <section
       id="servicos"
-      className="mx-auto w-full max-w-[1100px] px-6 pt-[58px] pb-24 text-center max-[920px]:pb-14"
+      className="mx-auto w-full max-w-[1100px] px-6 pb-24 pt-[58px] text-center max-[920px]:pb-12 max-[920px]:pt-10"
       data-reveal="up"
     >
-      <h3 className="m-0 text-[45px] leading-[1.05] max-[920px]:text-[34px] max-[560px]:text-[28px]">
+      <h3 className="m-0 text-[45px] leading-[1.05] max-[920px]:text-[30px] max-[560px]:text-[26px]">
         O que fazemos pela sua marca?
       </h3>
 
-      <p className="mt-3 mb-[140px] leading-[1.45] text-[#50546e] max-[920px]:mb-10 max-[560px]:mb-8">
+      <p className="mb-[140px] mt-3 text-[16px] leading-[1.5] text-[#50546e] max-[920px]:mb-9 max-[560px]:mb-7">
         Serviços com materiais de alta qualidade, que destacam sua marca.
       </p>
 
@@ -62,25 +62,25 @@ function ServicesSection({ services }) {
       </div>
 
       {/* ── MOBILE: timeline vertical ── */}
-      <div className="relative hidden max-[920px]:flex flex-col items-start pl-8">
+      <div className="relative hidden max-[920px]:flex max-[920px]:flex-col max-[920px]:items-start max-[920px]:pl-7">
 
         {/* Linha vertical */}
         <div className="pointer-events-none absolute left-[15px] top-0 h-full w-[2px] bg-[#8c3294]" />
 
         {services.map((service, index) => (
-          <div key={service.title} className="relative flex items-start gap-4 w-full mb-8 last:mb-0">
+          <div key={service.title} className="relative mb-7 flex w-full items-start gap-4 last:mb-0">
 
             {/* Ponto na linha */}
-            <div className="timeline-bullet absolute -left-[23px] top-5 h-4 w-4 rounded-full bg-[#8c3294] border-[3px] border-white outline outline-2 outline-[#8c3294] flex-shrink-0" />
+            <div className="timeline-bullet absolute -left-[23px] top-4 h-4 w-4 flex-shrink-0 rounded-full border-[3px] border-white bg-[#8c3294] outline outline-2 outline-[#8c3294]" />
 
             <article
-              className="w-full rounded-lg bg-[#8c3294] px-4 py-5 text-left text-white"
+              className="w-full rounded-lg bg-[#8c3294] px-4 py-4 text-left text-white"
               data-reveal="zoom"
               data-reveal-delay={index * 80}
             >
               <div>
                 <img src={service.icon} alt="icone" className="w-10" />
-                <h4 className="my-2 text-[20px] leading-[1.1]">{service.title}</h4>
+                <h4 className="my-2 text-[19px] leading-[1.1]">{service.title}</h4>
               </div>
               <p className="m-0 text-[14px] leading-[1.32]">{service.text}</p>
             </article>
@@ -88,8 +88,8 @@ function ServicesSection({ services }) {
         ))}
       </div>
 
-      <div className="mt-[90px] max-[920px]:mt-8">
-        <button className="rounded-lg bg-[#222a67] px-7 py-3 text-[13px] font-bold text-white">
+      <div className="mt-[90px] max-[920px]:mt-7">
+        <button className="rounded-lg bg-[#222a67] px-7 py-3 text-[13px] font-bold text-white max-[920px]:px-6 max-[920px]:py-2.5">
           Saiba mais
         </button>
       </div>

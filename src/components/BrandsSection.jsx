@@ -2,9 +2,9 @@ import BrandCarousel from './BrandCarousel'
 
 function BrandsSection({ brands }) {
   return (
-    <section className="bg-[#232860] py-14 text-center text-white" data-reveal="up">
+    <section className="bg-[#232860] py-14 text-center text-white max-[920px]:py-11" data-reveal="up">
       <div className="mx-auto w-full max-w-[960px] px-6">
-        <h3 className="m-0 text-[48px] leading-[1.05] max-[920px]:text-[34px]">Parceiros:</h3>
+        <h3 className="m-0 text-[48px] leading-[1.05] max-[920px]:text-[30px]">Parceiros:</h3>
         <BrandCarousel brands={brands} />
       </div>
     </section>

@@ -171,13 +171,13 @@ function QuoteFormSection({ id = 'orcamento', variant = 'dark', title }) {
   }
 
   return (
-    <section id={id} className={`relative py-[44px] text-white ${transparent ? 'bg-transparent' : 'bg-[#252a63] pt-[60px]'}`} data-reveal="up">
+    <section id={id} className={`relative py-[44px] text-white max-[920px]:py-10 ${transparent ? 'bg-transparent' : 'bg-[#252a63] pt-[60px] max-[920px]:pt-12'}`} data-reveal="up">
       {!transparent && (
         <div className="absolute -top-[17px] left-1/2 h-[34px] w-[34px] -translate-x-1/2 rotate-45 bg-[#252a63]" />
       )}
 
       <div className="mx-auto w-full max-w-[860px] px-6 text-center">
-        <h2 className="m-0 text-[52px] leading-[1.1] max-[920px]:text-[34px]">
+        <h2 className="m-0 text-[52px] leading-[1.1] max-[920px]:text-[30px]">
           {title || (
             <>
               Solicite um orçamento e retornaremos
@@ -189,12 +189,12 @@ function QuoteFormSection({ id = 'orcamento', variant = 'dark', title }) {
 
         <div className="mx-auto mb-6 mt-4 h-0.5 w-[70px] bg-[#b046ac]" />
 
-        <form onSubmit={handleSubmit} className="mt-1 grid grid-cols-2 gap-2 text-left max-[920px]:grid-cols-1">
+        <form onSubmit={handleSubmit} className="mt-1 grid grid-cols-2 gap-2 text-left max-[920px]:grid-cols-1 max-[920px]:gap-3">
           <label className="flex flex-col gap-[3px] text-[13px]">
             Nome*
             <input
               type="text"
-              className="border border-white/70 bg-transparent px-2 py-1.5 text-[15px] text-white"
+              className="border border-white/70 bg-transparent px-2 py-1.5 text-[15px] text-white max-[920px]:py-2"
               value={form.name}
               onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
               autoComplete="name"
@@ -204,7 +204,7 @@ function QuoteFormSection({ id = 'orcamento', variant = 'dark', title }) {
             E-mail*
             <input
               type="email"
-              className="border border-white/70 bg-transparent px-2 py-1.5 text-[15px] text-white"
+              className="border border-white/70 bg-transparent px-2 py-1.5 text-[15px] text-white max-[920px]:py-2"
               value={form.email}
               onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
               autoComplete="email"
@@ -214,7 +214,7 @@ function QuoteFormSection({ id = 'orcamento', variant = 'dark', title }) {
             Contato (WhatsApp)*
             <input
               type="text"
-              className="border border-white/70 bg-transparent px-2 py-1.5 text-[15px] text-white"
+              className="border border-white/70 bg-transparent px-2 py-1.5 text-[15px] text-white max-[920px]:py-2"
               value={form.whatsapp}
               onChange={handleWhatsappMask}
               inputMode="tel"
@@ -226,7 +226,7 @@ function QuoteFormSection({ id = 'orcamento', variant = 'dark', title }) {
             <select
               value={form.category}
               onChange={(e) => setForm((prev) => ({ ...prev, category: e.target.value }))}
-              className="border border-white/70 bg-transparent px-2 py-1.5 text-[15px] text-white"
+              className="border border-white/70 bg-transparent px-2 py-1.5 text-[15px] text-white max-[920px]:py-2"
             >
               <option value="" disabled className="text-[#222]">
                 Selecione
@@ -241,8 +241,8 @@ function QuoteFormSection({ id = 'orcamento', variant = 'dark', title }) {
           <label className="col-span-2 flex flex-col gap-[3px] text-[13px] max-[920px]:col-span-1">
             Descreva seu pedido aqui*
             <textarea
-              rows="2"
-              className="border border-white/70 bg-transparent px-2 py-1.5 text-[15px] text-white"
+              rows="3"
+              className="border border-white/70 bg-transparent px-2 py-1.5 text-[15px] text-white max-[920px]:py-2"
               value={form.description}
               onChange={(e) => setForm((prev) => ({ ...prev, description: e.target.value }))}
             />
@@ -257,7 +257,7 @@ function QuoteFormSection({ id = 'orcamento', variant = 'dark', title }) {
           <button
             type="submit"
             disabled={!canSubmit}
-            className="col-span-2 mx-auto mt-2 rounded-[18px] bg-[#f2f2f2] px-[26px] py-2 text-[16px] font-bold text-[#222a67] disabled:cursor-not-allowed disabled:opacity-60 max-[920px]:col-span-1"
+            className="col-span-2 mx-auto mt-2 rounded-[18px] bg-[#f2f2f2] px-[26px] py-2 text-[16px] font-bold text-[#222a67] disabled:cursor-not-allowed disabled:opacity-60 max-[920px]:col-span-1 max-[920px]:w-full"
           >
             {status === 'loading' ? 'Enviando...' : 'Enviar'}
           </button>
