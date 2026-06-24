@@ -197,7 +197,7 @@ function ServicesPage() {
                     aria-hidden={slideIdx !== currentSlideIndex}
                     className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${slideIdx === currentSlideIndex ? 'opacity-100' : 'opacity-0'}`}
                     style={{
-                      backgroundImage: `linear-gradient(180deg, rgba(8, 14, 35, 0.35), rgba(8, 14, 35, 0.7)), url('${encodeURI(slide.image)}')`,
+                      backgroundImage: `linear-gradient(180deg, rgba(8, 14, 35, 0.35), rgba(8, 14, 35, 0.7)), url('${encodeURI(slide.image.normalize('NFD'))}')`,
                     }}
                   />
                 ))}

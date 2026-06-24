@@ -27,8 +27,12 @@ const values = [
 const trajectoryPhotos = [
   { label: 'Envelopamento de veículos', image: '/im-projetos/envelopamento de veículos.jpeg' },
   { label: 'Confecção de camisas', image: '/im-projetos/camisas personalizadas.png' },
-  { label: 'Totens', image: '/im-projetos/totem acrílico.png' },
+  { label: 'Troféus e placas', image: '/im-projetos/totem acrílico.png' },
   { label: 'Brindes personalizados', image: '/im-projetos/taças personalizadas.png' },
+  { label: 'Encadernação', image: '/im-projetos/image00013.jpeg' },
+  { label: 'Copos personalizados', image: '/im-projetos/image00025.jpeg' },
+  { label: 'Decoração de festa', image: '/im-projetos/image00066.jpeg' },
+  { label: 'Displays em acrílico', image: '/im-projetos/image00050.jpeg' },
 ]
 
 function AboutPage() {
@@ -84,7 +88,7 @@ function AboutPage() {
               role="img"
               aria-label={item.label}
               className="h-[160px] rounded-md bg-[#8c8c8c] bg-cover bg-center"
-              style={{ backgroundImage: `url('${encodeURI(item.image)}')` }}
+              style={{ backgroundImage: `url('${encodeURI(item.image.normalize('NFD'))}')` }}
               data-reveal="zoom"
               data-reveal-delay={index * 70}
             />
@@ -130,7 +134,7 @@ function AboutPage() {
               aria-hidden={index !== insideSlideIndex}
               className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${index === insideSlideIndex ? 'opacity-100' : 'opacity-0'}`}
               style={{
-                backgroundImage: `linear-gradient(180deg, rgba(8, 14, 35, 0.35), rgba(8, 14, 35, 0.7)), url('${encodeURI(slide.image)}')`,
+                backgroundImage: `linear-gradient(180deg, rgba(8, 14, 35, 0.35), rgba(8, 14, 35, 0.7)), url('${encodeURI(slide.image.normalize('NFD'))}')`,
               }}
             />
           ))}
