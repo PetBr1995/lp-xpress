@@ -24,10 +24,22 @@ const values = [
   },
 ]
 
+const trajectoryPhotos = [
+  { label: 'Envelopamento de veículos', image: '/im-projetos/envelopamento de veículos.jpeg' },
+  { label: 'Confecção de camisas', image: '/im-projetos/camisas personalizadas.png' },
+  { label: 'Totens', image: '/im-projetos/totem acrílico.png' },
+  { label: 'Brindes personalizados', image: '/im-projetos/taças personalizadas.png' },
+]
+
 function AboutPage() {
   const [insideSlideIndex, setInsideSlideIndex] = useState(0)
 
-  const insideSlides = ['PRODUÇÃO', 'ATENDIMENTO', 'ACABAMENTO', 'IMPRESSÃO']
+  const insideSlides = [
+    { label: 'COMUNICAÇÃO VISUAL', image: '/im-projetos/Fachada.jpeg' },
+    { label: 'PERSONALIZADOS', image: '/im-projetos/caneca personalizada.jpeg' },
+    { label: 'GRÁFICA', image: '/im-projetos/papelaria personalizada.jpeg' },
+    { label: 'DECORAÇÃO', image: '/im-projetos/Backdrop.png' },
+  ]
 
   return (
     <>
@@ -66,8 +78,16 @@ function AboutPage() {
         <h2 className="m-0 text-[36px] leading-[1.1] text-[#222a67] max-[920px]:text-[28px]">Uma trajetória construída em cada projeto entregue</h2>
         <div className="mx-auto mb-8 mt-4 h-0.5 w-[70px] bg-[#b046ac]" />
         <div className="grid grid-cols-4 gap-4 max-[920px]:grid-cols-2 max-[920px]:gap-3">
-          {[1, 2, 3, 4].map((item, index) => (
-            <div key={item} className="grid h-[160px] place-items-center rounded-md bg-[#8c8c8c] text-[14px] text-white" data-reveal="zoom" data-reveal-delay={index * 70}>FOTO</div>
+          {trajectoryPhotos.map((item, index) => (
+            <div
+              key={item.label}
+              role="img"
+              aria-label={item.label}
+              className="h-[160px] rounded-md bg-[#8c8c8c] bg-cover bg-center"
+              style={{ backgroundImage: `url('${encodeURI(item.image)}')` }}
+              data-reveal="zoom"
+              data-reveal-delay={index * 70}
+            />
           ))}
         </div>
       </section>
@@ -103,12 +123,22 @@ function AboutPage() {
           </h2>
           <div className="mb-5 mt-4 h-0.5 w-[70px] bg-[#b046ac]" />
         </div>
-        <div className="relative grid min-h-[320px] place-items-center rounded-[2px] bg-[linear-gradient(140deg,#a5a8ad,#dbdbd2_40%,#7f8188)] p-4 text-white" data-reveal="right" data-reveal-delay="120">
+        <div className="relative grid min-h-[320px] place-items-center overflow-hidden rounded-[2px] bg-[linear-gradient(140deg,#a5a8ad,#dbdbd2_40%,#7f8188)] p-4 text-white" data-reveal="right" data-reveal-delay="120">
+          {insideSlides.map((slide, index) => (
+            <div
+              key={slide.label}
+              aria-hidden={index !== insideSlideIndex}
+              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${index === insideSlideIndex ? 'opacity-100' : 'opacity-0'}`}
+              style={{
+                backgroundImage: `linear-gradient(180deg, rgba(8, 14, 35, 0.35), rgba(8, 14, 35, 0.7)), url('${encodeURI(slide.image)}')`,
+              }}
+            />
+          ))}
           <button
             type="button"
             aria-label="Slide anterior"
             onClick={() => setInsideSlideIndex((prev) => (prev - 1 + insideSlides.length) % insideSlides.length)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 border-0 bg-transparent px-2 text-[24px] text-white/75 transition-colors hover:text-white"
+            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 border-0 bg-transparent px-2 text-[24px] text-white/80 transition-colors hover:text-white"
           >
             &#8249;
           </button>
@@ -117,19 +147,19 @@ function AboutPage() {
             type="button"
             aria-label="Próximo slide"
             onClick={() => setInsideSlideIndex((prev) => (prev + 1) % insideSlides.length)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 border-0 bg-transparent px-2 text-[24px] text-white/75 transition-colors hover:text-white"
+            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 border-0 bg-transparent px-2 text-[24px] text-white/80 transition-colors hover:text-white"
           >
             &#8250;
           </button>
 
-          <span className="mt-6 text-[18px] tracking-[0.03em]">
-            {insideSlides[insideSlideIndex]}
+          <span className="relative z-10 text-[18px] font-semibold uppercase tracking-[0.03em] drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
+            {insideSlides[insideSlideIndex].label}
           </span>
 
-          <div className="absolute bottom-0 left-1/2 flex -translate-x-1/2 pb-2">
+          <div className="absolute bottom-0 left-1/2 z-10 flex -translate-x-1/2 pb-2">
             {insideSlides.map((slide, index) => (
               <button
-                key={slide}
+                key={slide.label}
                 type="button"
                 aria-label={`Ir para slide ${index + 1}`}
                 onClick={() => setInsideSlideIndex(index)}

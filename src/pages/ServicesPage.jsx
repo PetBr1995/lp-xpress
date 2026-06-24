@@ -9,27 +9,57 @@ const serviceHighlights = [
   {
     title: 'Comunicação Visual',
     description: 'Equipamentos de alta tecnologia para garantir impressões nítidas e duráveis, nos mais diversos formatos de mídia.',
-    mediaSlides: ['BANNERS', 'ADESIVOS', 'LONAS', 'PLACAS'],
+    mediaSlides: [
+      { label: 'LONAS', image: '/im-projetos/Lona com ilhós.png' },
+      { label: 'ADESIVOS', image: '/im-projetos/plotagem adeviso vinil.jpeg' },
+      { label: 'ENVELOPAMENTO', image: '/im-projetos/envelopamento de veículos.jpeg' },
+      { label: 'PLOTAGEM', image: '/im-projetos/plotagem de parede 2.png' },
+      { label: 'FACHADAS', image: '/im-projetos/Fachada.jpeg' },
+    ],
   },
   {
     title: 'Confecção',
     description: 'Trabalhamos com serviço de malharia para camisas, abadás e uniformes personalizados do jeito que você imaginar.',
-    mediaSlides: ['UNIFORMES', 'CAMISAS', 'ABADÁS', 'JALECOS'],
+    mediaSlides: [
+      { label: 'CAMISAS', image: '/im-projetos/camisas personalizadas.png' },
+      { label: 'UNIFORMES', image: '/im-projetos/camisa personalizada 2.jpeg' },
+      { label: 'ABADÁS', image: '/im-projetos/camisa personalizada 3.jpeg' },
+      { label: 'CAMISETAS', image: '/im-projetos/camisa personalizada 4.jpeg' },
+    ],
   },
   {
     title: 'Gráfica Xpress',
     description: 'Serviços de gráfica rápida para facilitar seu dia a dia quando você precisar de materiais impressos.',
-    mediaSlides: ['CADERNOS', 'FOLDERS', 'PANFLETOS', 'CARTÕES'],
+    mediaSlides: [
+      { label: 'FLYERS', image: '/im-projetos/flyers.png' },
+      { label: 'ENCADERNAÇÃO', image: '/im-projetos/encadernação.jpeg' },
+      { label: 'PAPELARIA', image: '/im-projetos/papelaria personalizada.jpeg' },
+      { label: 'BLOCOS', image: '/im-projetos/blocos personalizados.png' },
+      { label: 'PASTAS', image: '/im-projetos/pasta com bolso.png' },
+    ],
   },
   {
     title: 'Brindes Personalizados',
     description: 'Variedade de brindes personalizados para empresas, eventos e datas especiais, tudo feito do jeitinho que você quiser.',
-    mediaSlides: ['CANECAS', 'COPOS', 'CHAVEIROS', 'SQUEEZES'],
+    mediaSlides: [
+      { label: 'CANECAS', image: '/im-projetos/canecas personalizadas.png' },
+      { label: 'COPOS', image: '/im-projetos/copo personalizado com adesivo vinil.jpeg' },
+      { label: 'CANETAS', image: '/img-personalizados/canetas-personalizadas.png' },
+      { label: 'ALMOFADAS', image: '/im-projetos/almofada personalizada.jpeg' },
+      { label: 'TAÇAS', image: '/im-projetos/taças personalizadas.png' },
+      { label: 'MOCHILA SACO', image: '/im-projetos/sacochila personalizada.jpeg' },
+    ],
   },
   {
     title: 'Decoração de Eventos',
     description: 'Itens de decoração personalizados em diferentes modelos. A identidade do seu evento fica do jeito que você projetou.',
-    mediaSlides: ['TOTENS DECORATIVOS', 'PAINÉIS', 'BACKDROPS', 'TOPOS'],
+    mediaSlides: [
+      { label: 'BACKDROPS', image: '/im-projetos/Backdrop.png' },
+      { label: 'TOTENS', image: '/im-projetos/totem acrílico.png' },
+      { label: 'ROLETA DE MESA', image: '/im-projetos/Roleta personalizada de mesa.png' },
+      { label: 'VENTAROLAS', image: '/im-projetos/ventarolas personalizadas.png' },
+      { label: 'CAVALETES', image: '/im-projetos/cavalete.png' },
+    ],
   },
 ]
 
@@ -109,7 +139,7 @@ function ServicesPage() {
           const reversed = index % 2 === 1
           const currentSlideIndex = slideIndexByService[item.title] ?? 0
           const slidesCount = item.mediaSlides.length
-          const currentSlideLabel = item.mediaSlides[currentSlideIndex]
+          const currentSlideLabel = item.mediaSlides[currentSlideIndex].label
 
           const goToSlide = (nextIndex) => {
             setSlideIndexByService((prev) => ({
@@ -152,7 +182,7 @@ function ServicesPage() {
               </div>
 
               <div
-                className={`relative grid w-full place-items-center bg-[#8d8d8d] p-5 text-white max-[920px]:h-[220px] max-[920px]:w-full ${reversed ? 'order-1 max-[920px]:order-none' : ''}`}
+                className={`relative grid w-full place-items-center overflow-hidden rounded-lg bg-[#8d8d8d] p-5 text-white max-[920px]:h-[220px] max-[920px]:w-full ${reversed ? 'order-1 max-[920px]:order-none' : ''}`}
                 style={isMobileLayout
                   ? undefined
                   : {
@@ -161,11 +191,21 @@ function ServicesPage() {
                 data-reveal={reversed ? 'left' : 'right'}
                 data-reveal-delay="120"
               >
+                {item.mediaSlides.map((slide, slideIdx) => (
+                  <div
+                    key={slide.label}
+                    aria-hidden={slideIdx !== currentSlideIndex}
+                    className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${slideIdx === currentSlideIndex ? 'opacity-100' : 'opacity-0'}`}
+                    style={{
+                      backgroundImage: `linear-gradient(180deg, rgba(8, 14, 35, 0.35), rgba(8, 14, 35, 0.7)), url('${encodeURI(slide.image)}')`,
+                    }}
+                  />
+                ))}
                 <button
                   type="button"
                   aria-label="Anterior"
                   onClick={goToPrevious}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 border-0 bg-transparent px-2 text-[22px] text-[#d8d8d8] transition-colors hover:text-white"
+                  className="absolute left-0 top-1/2 z-10 -translate-y-1/2 border-0 bg-transparent px-2 text-[22px] text-white/80 transition-colors hover:text-white"
                 >
                   &#8249;
                 </button>
@@ -173,14 +213,14 @@ function ServicesPage() {
                   type="button"
                   aria-label="Próximo"
                   onClick={goToNext}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 border-0 bg-transparent px-2 text-[22px] text-[#d8d8d8] transition-colors hover:text-white"
+                  className="absolute right-0 top-1/2 z-10 -translate-y-1/2 border-0 bg-transparent px-2 text-[22px] text-white/80 transition-colors hover:text-white"
                 >
                   &#8250;
                 </button>
-                <span className="mt-5 text-[16px] tracking-[0.03em] transition-opacity duration-300">
+                <span className="relative z-10 text-[16px] font-semibold tracking-[0.03em] uppercase drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] transition-opacity duration-300">
                   {currentSlideLabel}
                 </span>
-                <div className="mt-1.5 flex">
+                <div className="relative z-10 mb-1 mt-1.5 flex">
                   {item.mediaSlides.map((slide, dotIndex) => (
                     <button
                       key={slide}
